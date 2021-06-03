@@ -4,29 +4,28 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import in.sakthi.service.ChannelService;
 import in.sakthi.util.ConnectionUtil;
 
 public class ChannelDao {
+	
+	/**
+	 * List store the database 
+	 * @param args
+	 * @throws Exception
+	 */
 
 	public static void main(String[] args) throws Exception {
-		Integer id = 4;
-		String channelName = "Netflix";
 		Connection connection = null;
 		PreparedStatement pst = null;
 				 connection = ConnectionUtil.getConnection();
-				
-				String sql = "insert into channel(id,channelName) values(?,?)";
+				ChannelService.getChannels();
+				String sql = "select * from channel";
 			    pst = connection.prepareStatement(sql);
-				pst.setInt(1, id);
-				pst.setString(2, channelName);
-				
-				int rows = pst.executeUpdate();
-			    System.out.println("No of Row inserted : " +rows);
 			    
-	 }
-			    
-			    public static void close (PreparedStatement pst, Connection con) throws SQLException {
-					// Null Check - to avoid Null Pointer Exception
+	}
+
+	public static void close (PreparedStatement pst, Connection con) throws SQLException {
 					if (pst != null) {
 						pst.close();
 					}

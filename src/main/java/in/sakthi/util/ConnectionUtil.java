@@ -2,12 +2,12 @@ package in.sakthi.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConnectionUtil {
-	
+	  /**
+	   * Database Connection
+	   */
 
 	static String driverClass = "org.postgresql.Driver";
 	static String url = "jdbc:postgresql://localhost:5432/subscription_db";
