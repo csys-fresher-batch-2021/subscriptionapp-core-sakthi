@@ -22,7 +22,7 @@ public class ChannelDao {
 		Connection connection = ConnectionUtil.getConnection();
 		Statement pst;
 		pst = connection.createStatement();
-		String sql = "select * from channel";
+		String sql = "select id,channelName from channel";
 		ResultSet rst;
 		rst = pst.executeQuery(sql);
 		List<Channel> channels = new ArrayList<>();
