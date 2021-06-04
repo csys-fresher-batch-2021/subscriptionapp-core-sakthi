@@ -1,11 +1,11 @@
 package in.sakthi.model;
 
-public class Channels {
+public class Channel {
 	
 	private Integer id;
 	private String channelName;
 	
-	public Channels(Integer id, String channelName) {
+	public Channel(Integer id, String channelName) {
 		super();
 		this.id = id;
 		this.channelName = channelName;

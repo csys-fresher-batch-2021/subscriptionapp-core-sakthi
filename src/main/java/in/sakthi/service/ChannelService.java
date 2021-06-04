@@ -1,19 +1,25 @@
 package in.sakthi.service;
 
-import java.util.HashMap;
+import java.sql.SQLException;
+import java.util.List;
+
+import in.sakthi.dao.ChannelDao;
+import in.sakthi.model.Channel;
 public class ChannelService {
-	
-	private static final HashMap<Integer, String> channels = new HashMap<Integer, String>();
-	static
+	/**
+	 * List of Channels
+	 * @return
+	 * @throws SQLException
+	 */
+	public static List<Channel> getList() throws SQLException
 	{
-	channels.put(1,"TvShows");
-	channels.put(2,"Sports");
-	channels.put(3,"Movies");
-	channels.put(4, "News");
-	System.out.println("The channel List is: "+channels);
+		try {
+			return ChannelDao.getChannels();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
-public static HashMap<Integer,String> getChannels()
-{
-	return channels;
-}
-}
+
+	
