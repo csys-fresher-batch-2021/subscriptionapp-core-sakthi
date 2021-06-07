@@ -4,6 +4,7 @@ public class Channel {
 	
 	private Integer id;
 	private String channelName;
+	private Integer price;
 	
 	public Channel(Integer id, String channelName) {
 		super();
@@ -11,13 +12,13 @@ public class Channel {
 		this.channelName = channelName;
 	}
 	
-	
 	@Override
 	public String toString() {
-		return "Channels [id=" + id + ", channelName=" + channelName + "]";
+		return "Channel [id=" + id + ", channelName=" + channelName + "]";
 	}
-	
-	
+
+
+
 	public Integer getId() {
 		return id;
 	}

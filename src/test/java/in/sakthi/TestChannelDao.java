@@ -1,6 +1,8 @@
 package in.sakthi;
 
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import in.sakthi.dao.ChannelDao;
@@ -14,7 +16,20 @@ public class TestChannelDao {
 		for(Channel channel : channels) {
 			System.out.println(channel);
 		}
+	}
+
+		public static void close(Statement pst, Connection Connection) throws SQLException {
+			try {
+				if (pst != null) {
+					pst.close();
+				}
+				if (Connection != null) {
+					Connection.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 
 	}
 
-}

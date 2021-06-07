@@ -6,6 +6,10 @@ import java.util.List;
 import in.sakthi.dao.ChannelDao;
 import in.sakthi.model.Channel;
 public class ChannelService {
+	
+	 private ChannelService() {
+		    throw new IllegalStateException("ChannelService");
+		  }
 	/**
 	 * List of Channels
 	 * @return

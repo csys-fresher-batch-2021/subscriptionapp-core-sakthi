@@ -11,6 +11,10 @@ import in.sakthi.model.Channel;
 import in.sakthi.util.ConnectionUtil;
 
 public class ChannelDao {
+	
+	 private ChannelDao() {
+		    throw new IllegalStateException("ChannelDao");
+		  }
 
 	/**
 	 * List store the database 
@@ -19,31 +23,24 @@ public class ChannelDao {
 	 * @throws Exception
 	 */
 	public static List<Channel> getChannels() throws SQLException {
-		Connection connection = ConnectionUtil.getConnection();
-		Statement pst;
-		pst = connection.createStatement();
-		String sql = "select id,channelName from channel";
-		ResultSet rst;
-		rst = pst.executeQuery(sql);
-		List<Channel> channels = new ArrayList<>();
-		while (rst.next()) {
-			Channel channel = new Channel(rst.getInt("id"), rst.getString("channelName"));
-			channels.add(channel);
-		}
-		return channels;
-
-	}
-
-	public static void close(Statement pst, Connection connection) throws SQLException {
 		try {
-			if (pst != null) {
-				pst.close();
+			Connection connection = ConnectionUtil.getConnection();
+			Statement pst;
+			pst = connection.createStatement();
+			String sql = "select id,channelName from channel";
+			ResultSet rst;
+			rst = pst.executeQuery(sql);
+			List<Channel> channels = new ArrayList<>();
+			while (rst.next()) {
+				Channel channel = new Channel(rst.getInt("id"), rst.getString("channelName"));
+				channels.add(channel);
 			}
-			if (connection != null) {
-				connection.close();
-			}
+			return channels;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return null;
+
 	}
+
 }

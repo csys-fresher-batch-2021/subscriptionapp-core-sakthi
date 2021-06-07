@@ -11,7 +11,8 @@ public class TestChannelService {
 	public static void main(String[] args) throws SQLException {
 		
 		List<Channel> channel = ChannelService.getList();
-
+		System.out.println();
+      
 	}
 
 }
