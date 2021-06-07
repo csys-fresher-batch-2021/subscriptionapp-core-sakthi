@@ -4,7 +4,6 @@ public class Channel {
 	
 	private Integer id;
 	private String channelName;
-	private Integer price;
 	
 	public Channel(Integer id, String channelName) {
 		super();
