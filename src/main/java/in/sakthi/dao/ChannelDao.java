@@ -11,15 +11,16 @@ import in.sakthi.model.Channel;
 import in.sakthi.util.ConnectionUtil;
 
 public class ChannelDao {
-	
-	 private ChannelDao() {
-		    throw new IllegalStateException("ChannelDao");
-		  }
+
+	private ChannelDao() {
+		throw new IllegalStateException("ChannelDao");
+	}
 
 	/**
-	 * List store the database 
+	 * List store the database
+	 * 
 	 * @param args
-	 * @throws SQLException 
+	 * @throws SQLException
 	 * @throws Exception
 	 */
 	public static List<Channel> getChannels() throws SQLException {

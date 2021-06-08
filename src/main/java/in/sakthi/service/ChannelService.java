@@ -5,18 +5,20 @@ import java.util.List;
 
 import in.sakthi.dao.ChannelDao;
 import in.sakthi.model.Channel;
+
 public class ChannelService {
-	
-	 private ChannelService() {
-		    throw new IllegalStateException("ChannelService");
-		  }
+
+	private ChannelService() {
+		throw new IllegalStateException("ChannelService");
+	}
+
 	/**
 	 * List of Channels
+	 * 
 	 * @return
 	 * @throws SQLException
 	 */
-	public static List<Channel> getList() throws SQLException
-	{
+	public static List<Channel> getList() throws SQLException {
 		try {
 			return ChannelDao.getChannels();
 		} catch (SQLException e) {
@@ -25,5 +27,3 @@ public class ChannelService {
 		return null;
 	}
 }
-
-	

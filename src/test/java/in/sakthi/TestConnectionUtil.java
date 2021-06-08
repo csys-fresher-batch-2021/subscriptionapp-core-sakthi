@@ -7,9 +7,9 @@ import org.junit.Test;
 import in.sakthi.util.ConnectionUtil;
 
 public class TestConnectionUtil {
-@Test
+	@Test
 	public static void main(String[] args) {
-		
+
 		Connection connection = ConnectionUtil.getConnection();
 		System.out.println(connection);
 
