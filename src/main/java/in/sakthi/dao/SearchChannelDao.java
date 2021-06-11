@@ -1,42 +1,42 @@
 package in.sakthi.dao;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import in.sakthi.model.SearchChannel;
 import in.sakthi.util.ConnectionUtil;
 
 public class SearchChannelDao {
-	
+
 	private SearchChannelDao() {
 		throw new IllegalStateException("SearchChannelDao");
 	}
-	
-	public static void save(String channelName,Integer channelId,String planName,Integer price,String validity) throws Exception
-	{
-	    Connection connection = null;
-	    PreparedStatement pst = null;
-		
-	    try {
-			connection = ConnectionUtil.getConnection();
-			String sql = "insert into searchChannel(channelName,channelId,planName,price,validity) values ( ?,?,?,?,?)";
-			pst = connection.prepareStatement(sql);
-			pst.setString(1, channelName);
-			pst.setInt(2,channelId);
-			pst.setString(3,planName);
-			pst.setInt(4, price);
-			pst.setString(5, validity);
-			
-			int rows = pst.executeUpdate();
-			boolean inserted = rows == 1 ? true : false;
-			System.out.println("No of rows inserted :" + rows);
+	/*
+	 * List of subscription Planning
+	 *  Connect to the database
+	 */
+
+	public static List<SearchChannel> getList() throws SQLException {
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			Statement pst;
+			pst = connection.createStatement();
+			String sql = "select channelName,channelId,planName,price,validity from searchChannel";
+			ResultSet rst;
+			rst = pst.executeQuery(sql);
+			List<SearchChannel> searchChannels = new ArrayList<>();
+			while (rst.next()) {
+				SearchChannel Channel = new SearchChannel(rst.getString("channelName"), rst.getInt("channelId"),
+						rst.getString("planName"), rst.getInt("price"), rst.getString("validity"));
+				searchChannels.add(Channel);
+			}
+			return searchChannels;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new Exception("Unable to add product");
 		}
-	    finally {
-	    ConnectionUtil.close(pst, connection);
-	    }
+		return null;
 	}
-
 }

@@ -7,7 +7,7 @@ public class SearchChannel {
 	private String planName;
 	private Integer price;
 	private String validity;
-	
+
 	public SearchChannel(String channelName, Integer channelId, String planName, Integer price, String validity) {
 		super();
 		this.channelName = channelName;
@@ -17,7 +17,6 @@ public class SearchChannel {
 		this.validity = validity;
 	}
 
-	
 	public String getChannelName() {
 		return channelName;
 	}
@@ -25,7 +24,7 @@ public class SearchChannel {
 	public void setChannelName(String channelName) {
 		this.channelName = channelName;
 	}
-    
+
 	public Integer getChannelId() {
 		return channelId;
 	}
@@ -33,7 +32,6 @@ public class SearchChannel {
 	public void setChannelId(Integer channelId) {
 		this.channelId = channelId;
 	}
-
 
 	public String getPlanName() {
 		return planName;
@@ -46,7 +44,7 @@ public class SearchChannel {
 	public Integer getPrice() {
 		return price;
 	}
-    
+
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
@@ -54,11 +52,11 @@ public class SearchChannel {
 	public String getValidity() {
 		return validity;
 	}
-	
+
 	public void setValidity(String validity) {
 		this.validity = validity;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "SearchChannel [channelName=" + channelName + ", channelId=" + channelId + ", planName=" + planName
