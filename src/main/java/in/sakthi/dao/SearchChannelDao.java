@@ -20,8 +20,8 @@ public class SearchChannelDao {
 	 *  Connect to the database
 	 */
 
-	public static List<SearchChannel> getList() throws Exception{
-	   List<SearchChannel> searchChannels = new ArrayList<SearchChannel>();
+	public static List<SearchChannel> getList() throws SQLException {
+	   List<SearchChannel> searchChannels = new ArrayList<>();
 	   Connection con = null;
 	   PreparedStatement pst = null;
 	   ResultSet rst = null;
@@ -41,7 +41,6 @@ public class SearchChannelDao {
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
-				//throw new Exception("channel");
 			}
 			finally
 			{
