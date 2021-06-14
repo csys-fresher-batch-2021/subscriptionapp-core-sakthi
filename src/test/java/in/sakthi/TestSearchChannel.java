@@ -7,10 +7,9 @@ import in.sakthi.service.SearchChannelService;
 public class TestSearchChannel {
 
 	public static void main(String[] args) throws Exception {
-		String channelName = "Hotstar";
-		List<SearchChannel> searchChannels = SearchChannelService.getSearchChannel(channelName);
-		for (SearchChannel channels : searchChannels) {
-			System.out.println(channels);
+		List<SearchChannel> searchChannels = SearchChannelService.getSearchChannel();
+		for (SearchChannel Channel : searchChannels) {
+			System.out.println(Channel);
 		}
 	}
 }

@@ -3,3 +3,4 @@ insert into searchChannel(channelName,channelId,planName,price,validity) values 
 insert into searchChannel(channelName,channelId,planName,price,validity) values ('Hotstar Premium',102,'Yearly',1000,'365');
 insert into searchChannel(channelName,channelId,planName,price,validity) values ('Hotstar VIP',103,'Monthly',500,'30');
 select channelName,channelId,planName,price,validity from searchChannel;
+

@@ -11,15 +11,16 @@ import in.sakthi.util.ConnectionUtil;
 
 public class SearchChannelDao {
 
-	private SearchChannelDao() {
-		throw new IllegalStateException("SearchChannelDao");
-	}
-	/*
+	  private SearchChannelDao() { 
+		  throw new IllegalStateException("SearchChannelDao");
+	  }
+	
+	  /*
 	 * List of subscription Planning
 	 *  Connect to the database
 	 */
 
-	public static List<SearchChannel> getList() throws SQLException {
+	public static List<SearchChannel> getList() throws Exception{
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			Statement pst;
