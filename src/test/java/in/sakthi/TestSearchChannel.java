@@ -8,8 +8,8 @@ public class TestSearchChannel {
 
 	public static void main(String[] args) throws Exception {
 		List<SearchChannel> searchChannels = SearchChannelService.getSearchChannel();
-		for (SearchChannel Channel : searchChannels) {
-			System.out.println(Channel);
+		for (SearchChannel channel : searchChannels) {
+			System.out.println(channel);
 		}
 	}
 }

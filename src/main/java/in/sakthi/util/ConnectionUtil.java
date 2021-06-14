@@ -2,6 +2,7 @@ package in.sakthi.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -32,17 +33,33 @@ public class ConnectionUtil {
 		return connection;
 	}
 
-	public static void close(Statement pst, Connection Connection) throws SQLException {
+	public static void close(Statement pst, Connection connection)  {
 		try {
 			if (pst != null) {
 				pst.close();
 			}
-			if (Connection != null) {
-				Connection.close();
+			if (connection != null) {
+				connection.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public static void close1(ResultSet rst,Statement pst, Connection connection) throws SQLException  {
+		try {
+			if (rst != null)
+			{
+				rst.close();
+			}
+			if (pst != null) {
+				pst.close();
+			}
+			if (connection != null) {
+					connection.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+}
 }
