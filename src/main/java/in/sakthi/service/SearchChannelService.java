@@ -15,15 +15,11 @@ public class SearchChannelService {
 	 * List of subscription plan
 	 * 
 	 * @return
+	 * @throws SQLException 
 	 * @throws Exception
 	 */
 
-	public static List<SearchChannel> getSearchChannel() {
-		try {
+	public static List<SearchChannel> getSearchChannel() throws SQLException {
 			return SearchChannelDao.getList();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return getSearchChannel();
+		} 
 	}
-}
