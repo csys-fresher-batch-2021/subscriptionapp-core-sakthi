@@ -33,7 +33,7 @@ public class ConnectionUtil {
 		return connection;
 	}
 
-	public static void close(Statement pst, Connection connection)  {
+	public static void close(Statement pst, Connection connection) {
 		try {
 			if (pst != null) {
 				pst.close();
@@ -45,21 +45,16 @@ public class ConnectionUtil {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void close1(ResultSet rst,Statement pst, Connection connection) throws SQLException  {
-		try {
-			if (rst != null)
-			{
+
+	public static void close1(ResultSet rst, Statement pst, Connection connection) throws SQLException {
+			if (rst != null) {
 				rst.close();
 			}
 			if (pst != null) {
 				pst.close();
 			}
 			if (connection != null) {
-					connection.close();
+				connection.close();
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-}
+	}
 }
