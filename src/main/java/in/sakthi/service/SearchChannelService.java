@@ -18,12 +18,12 @@ public class SearchChannelService {
 	 * @throws Exception 
 	 */
 
-	public static List<SearchChannel> getSearchChannel() throws Exception {
+	  public static List<SearchChannel> getSearchChannel() {
 			 try {
 				return SearchChannelDao.getList();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			return null;
+			return getSearchChannel();
 	}
 }
