@@ -26,7 +26,6 @@ public class ValidUserDetail {
 				isValid = true;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new ServiceException("User Details are not valid");
 		}
 		return isValid;

@@ -26,7 +26,7 @@ public class UserDetailService {
 			RegisterService.registerUser(reg);
 			valid = true;
 		}
-		return isRegister;
+		return valid;
 	}
 
 }

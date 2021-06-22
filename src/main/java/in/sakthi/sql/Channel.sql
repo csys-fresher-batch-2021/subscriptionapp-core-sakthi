@@ -1,4 +1,4 @@
-create table channel (id int,channelName VARCHAR(40));
+create table channel (id int,channelName varchar(40));
 
 select id,channelName from channel;
 

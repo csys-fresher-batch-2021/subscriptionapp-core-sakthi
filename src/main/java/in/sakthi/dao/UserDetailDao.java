@@ -31,7 +31,6 @@ public class UserDetailDao {
 			pst.setString(3, reg.getEmail());
 			pst.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new DatabaseException("unable user detail");
 		} finally {
 			ConnectionUtil.close(pst, con);

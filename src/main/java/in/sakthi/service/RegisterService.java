@@ -14,7 +14,6 @@ public class RegisterService {
 		try {
 			UserDetailDao.register(regobj);
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new ServiceException("Cannot Register");
 		}
 		return true;
