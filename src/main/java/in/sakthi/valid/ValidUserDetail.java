@@ -4,17 +4,25 @@ import in.sakthi.exception.ServiceException;
 import in.sakthi.validation.UserDetailValidation;
 
 public class ValidUserDetail {
-	
+
 	private ValidUserDetail() {
-		
+
 	}
-	
-	public static boolean isValidUser(String name,long mobileNo,String email)
-	{
+
+	/**
+	 * Validation of name,mobileNo,email
+	 * 
+	 * @param name
+	 * @param mobileNo
+	 * @param email
+	 * @return
+	 */
+
+	public static boolean isValidUser(String name, long mobileNo, String email) {
 		boolean isValid = false;
 		try {
-			if(UserDetailValidation.isValidName(name) && UserDetailValidation.isValidMobileNo(mobileNo) && UserDetailValidation.isValidEmail(email))
-			{
+			if (UserDetailValidation.isValidName(name) && UserDetailValidation.isValidMobileNo(mobileNo)
+					&& UserDetailValidation.isValidEmail(email)) {
 				isValid = true;
 			}
 		} catch (Exception e) {
