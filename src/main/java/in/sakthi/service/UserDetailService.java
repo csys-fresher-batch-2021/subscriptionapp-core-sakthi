@@ -19,12 +19,12 @@ public class UserDetailService {
 	 */
 
 	public static boolean checkUserDetail(String name, long mobileNo, String email) {
-		boolean isValid = false;
+		boolean valid = false;
 		UserDetail reg = new UserDetail(name, mobileNo, email);
 		boolean isRegister = ValidUserDetail.isValidUser(name, mobileNo, email);
 		if (isRegister) {
 			RegisterService.registerUser(reg);
-			isValid = true;
+			valid = true;
 		}
 		return isRegister;
 	}
