@@ -1,4 +1,6 @@
-select * from channel;
+create table channel (id int,channelName varchar(40));
+
+select id,channelName from channel;
 
 insert into channel (id,channelName) values (1,'TvShows');
 insert into channel (id,channelName) values (2,'Sports');

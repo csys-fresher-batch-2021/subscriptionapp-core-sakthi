@@ -25,7 +25,6 @@ public class ConnectionUtil {
 		try {
 			Class.forName(DRIVER_CLASS_NAME);
 			connection = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
-			System.out.println(connection);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Unable to get the database connection");
