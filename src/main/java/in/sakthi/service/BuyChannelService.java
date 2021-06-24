@@ -3,6 +3,7 @@ package in.sakthi.service;
 import java.time.LocalDate;
 import in.sakthi.dao.BuyChannelDao;
 import in.sakthi.exception.DatabaseException;
+import in.sakthi.exception.ServiceException;
 import in.sakthi.log.Logger;
 import in.sakthi.model.BuyChannel;
 
@@ -24,7 +25,7 @@ public class BuyChannelService {
 		try {
 			BuyChannelDao.channel(channel);
 		} catch (DatabaseException e) {
-			e.printStackTrace();
+			throw new ServiceException("Cannot Channel");
 		}
 		return true;
 	}
