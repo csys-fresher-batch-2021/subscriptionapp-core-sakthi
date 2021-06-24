@@ -1,9 +1,9 @@
 package in.sakthi.log;
 
 public class Logger {
-	
+
 	private Logger() {
-		
+
 	}
 
 	/**
