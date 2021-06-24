@@ -3,8 +3,6 @@ package in.sakthi.model;
 import java.time.LocalDate;
 
 public class BuyChannel {
-
-	public static  String MONTH;
 	private String channelName;
 	private Integer channelId;
 	private String validity;
@@ -79,10 +77,6 @@ public class BuyChannel {
 
 	public static BuyChannel getInstance() {
 		return null;
-	}
-
-	public static void add(String month, int i) {
-		
 	}
 
 }

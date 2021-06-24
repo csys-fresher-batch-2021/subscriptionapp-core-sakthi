@@ -9,26 +9,36 @@ import in.sakthi.model.BuyChannel;
 import in.sakthi.util.ConnectionUtil;
 
 public class BuyChannelDao {
-	
+
+	private BuyChannelDao() {
+
+	}
+
+	/**
+	 * get a channelName,channelId,validity
+	 * 
+	 * @param channel
+	 * @throws SQLException
+	 */
+
 	public static void channel(BuyChannel channel) throws SQLException {
-		
+
 		Connection con = null;
 		PreparedStatement pst = null;
-		
+
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			String sql = "insert into pay(channel_name,channel_id,validity) values (?,?,?)";
 			pst = connection.prepareStatement(sql);
-			pst.setString(1,channel.getChannelName());
+			pst.setString(1, channel.getChannelName());
 			pst.setInt(2, channel.getChannelId());
 			pst.setString(3, channel.getValidity());
 			pst.executeUpdate();
 		} catch (SQLException e) {
 			throw new DatabaseException("unable user detail");
-		}
-		finally {
+		} finally {
 			ConnectionUtil.close(pst, con);
 		}
- }
+	}
 
 }
