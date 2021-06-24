@@ -26,7 +26,6 @@ public class BuyChannelService {
 		try {
 			BuyChannelDao.channel(channel);
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new ServiceException("Cannot Channel");
 		}
 		return true;
@@ -52,7 +51,7 @@ public class BuyChannelService {
 			LocalDate expiryDate = startDate.plusDays(365);
 			String obj1 = "The Starting Date is: " + startDate;
 			Logger.logger(obj1);
-			String obj2 = "The Expiry Date is: " + expiryDate;
+			String obj2 = "The Expiry Date is: " + expiryDate; 
 			Logger.logger(obj2);
 		}
 		return isValid;

@@ -12,7 +12,7 @@ public class Logger {
 	 * @param obj
 	 */
 	public static void logger(Object obj) {
-		Logger.logger(obj);
+		System.out.println(obj);
 	}
 
 }
