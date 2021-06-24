@@ -10,15 +10,12 @@ public class BuyChannel {
 	private LocalDate startDate;
 	private LocalDate expiryDate;
 
-	public BuyChannel(String channelName, Integer channelId, String validity, Integer amount, LocalDate startDate,
-			LocalDate expiryDate) {
+	public BuyChannel(String channelName, Integer channelId, String validity)
+ {
 		super();
 		this.channelName = channelName;
 		this.channelId = channelId;
 		this.validity = validity;
-		this.amount = amount;
-		this.startDate = startDate;
-		this.expiryDate = expiryDate;
 	}
 
 	public String getChannelName() {

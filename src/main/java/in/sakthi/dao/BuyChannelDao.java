@@ -21,7 +21,7 @@ public class BuyChannelDao {
 	 * @throws SQLException
 	 */
 
-	public static void channel(BuyChannel channel) throws SQLException {
+	public static void channel(BuyChannel channel) throws DatabaseException {
 
 		Connection con = null;
 		PreparedStatement pst = null;

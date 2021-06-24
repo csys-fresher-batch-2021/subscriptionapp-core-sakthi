@@ -11,7 +11,7 @@ public class TestBuyChannel {
 		Integer channelId = 101;
 		String validity = "Monthly";
 
-		BuyChannel channel = new BuyChannel(channelName, channelId, validity, channelId, null, null);
+		BuyChannel channel = new BuyChannel(channelName, channelId, validity);
 		BuyChannelService.buyChannel(channel);
 		BuyChannelService.date(validity);
 	}

@@ -1,10 +1,8 @@
 package in.sakthi.service;
 
-import java.sql.SQLException;
 import java.time.LocalDate;
-
 import in.sakthi.dao.BuyChannelDao;
-import in.sakthi.exception.ServiceException;
+import in.sakthi.exception.DatabaseException;
 import in.sakthi.log.Logger;
 import in.sakthi.model.BuyChannel;
 
@@ -25,8 +23,8 @@ public class BuyChannelService {
 
 		try {
 			BuyChannelDao.channel(channel);
-		} catch (SQLException e) {
-			throw new ServiceException("Cannot Channel");
+		} catch (DatabaseException e) {
+			e.printStackTrace();
 		}
 		return true;
 	}
