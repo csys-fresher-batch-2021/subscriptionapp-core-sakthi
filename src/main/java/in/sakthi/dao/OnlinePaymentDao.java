@@ -8,6 +8,10 @@ import in.sakthi.model.OnlinePayment;
 import in.sakthi.util.ConnectionUtil;
 
 public class OnlinePaymentDao {
+	
+	private OnlinePaymentDao() {
+		
+	}
 
 	public static void payment(OnlinePayment pay) {
 		Connection con = null;

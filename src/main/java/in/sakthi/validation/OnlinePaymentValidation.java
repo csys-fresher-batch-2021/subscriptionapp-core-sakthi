@@ -7,6 +7,10 @@ import in.sakthi.log.Logger;
 
 public class OnlinePaymentValidation {
 	
+	private OnlinePaymentValidation() {
+		
+	}
+	
 	public static boolean isEmptyString(String name) {
 		boolean isValid = false;
 

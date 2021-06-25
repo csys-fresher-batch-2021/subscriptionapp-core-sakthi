@@ -1,12 +1,14 @@
 package in.sakthi.service;
 
-import java.sql.SQLException;
-
 import in.sakthi.dao.OnlinePaymentDao;
 import in.sakthi.exception.ServiceException;
 import in.sakthi.model.OnlinePayment;
 
 public class OnlineRegister {
+	
+	private OnlineRegister() {
+		
+	}
 	
 	public static boolean registerPayment(OnlinePayment payobj)
 	{
