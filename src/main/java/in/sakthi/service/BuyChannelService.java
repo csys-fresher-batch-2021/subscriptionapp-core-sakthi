@@ -42,7 +42,8 @@ public class BuyChannelService {
 			Logger.logger(obj1);
 			String obj2 = "The Expiry Date is: " + expiryDate;
 			Logger.logger(obj2);
-		} else {
+		} else if(validity.equals("Yearly"))
+				{
 			Integer amount = 700;
 			String obj = "The amount is: " + amount;
 			Logger.logger(obj);
