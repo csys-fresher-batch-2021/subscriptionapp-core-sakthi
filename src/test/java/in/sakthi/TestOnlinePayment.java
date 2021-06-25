@@ -3,8 +3,7 @@ package in.sakthi;
 import java.sql.SQLException;
 import in.sakthi.exception.ServiceException;
 import in.sakthi.model.OnlinePayment;
-import in.sakthi.service.OnlineRegister;
-import in.sakthi.valid.ValidOnlinePayment;
+import in.sakthi.service.ValidOnlinePayment;
 
 public class TestOnlinePayment {
 
@@ -16,13 +15,11 @@ public class TestOnlinePayment {
 		int amount = 200;
 
 		OnlinePayment pay = new OnlinePayment(mobileNo, cardNo, pinNo, amount);
-		if (ValidOnlinePayment.isValidOnlinePayment(mobileNo, cardNo, pinNo)) {
-			OnlineRegister.registerPayment(pay);
+		if (ValidOnlinePayment.isValidOnlinePayment(mobileNo, cardNo, pinNo, pay)) {
 			System.out.println("Your Online Payment is Successfull...");
 		} else {
 			System.out.println("The Online Payment is rejected...");
 		}
-
 	}
 
 }
