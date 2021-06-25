@@ -6,11 +6,18 @@ import java.util.regex.Pattern;
 import in.sakthi.log.Logger;
 
 public class OnlinePaymentValidation {
-	
+
 	private OnlinePaymentValidation() {
-		
+
 	}
-	
+
+	/**
+	 * validation of mobileNo,cardNo,pinNo
+	 * 
+	 * @param name
+	 * @return
+	 */
+
 	public static boolean isEmptyString(String name) {
 		boolean isValid = false;
 
@@ -20,7 +27,7 @@ public class OnlinePaymentValidation {
 		}
 		return isValid;
 	}
-	
+
 	public static boolean isValidMobileNo(long mobileNo) {
 		boolean isValid = false;
 		String number = String.valueOf(mobileNo);
@@ -33,7 +40,7 @@ public class OnlinePaymentValidation {
 		}
 		return isValid;
 	}
-	
+
 	public static boolean isValidCardNo(long cardNo) {
 		String num = String.valueOf(cardNo);
 		boolean isValid = true;
@@ -46,7 +53,7 @@ public class OnlinePaymentValidation {
 		}
 		return isValid;
 	}
-	
+
 	public static boolean isValidPinNo(int pinNo) {
 		String num = String.valueOf(pinNo);
 		boolean isValid = true;
@@ -59,5 +66,5 @@ public class OnlinePaymentValidation {
 		}
 		return isValid;
 
-}
+	}
 }

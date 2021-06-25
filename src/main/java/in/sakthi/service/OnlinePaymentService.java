@@ -4,21 +4,29 @@ import in.sakthi.model.OnlinePayment;
 import in.sakthi.valid.ValidOnlinePayment;
 
 public class OnlinePaymentService {
-	
+
 	private OnlinePaymentService() {
 		throw new IllegalStateException("OnlinePaymentService");
 	}
-	
-	public static boolean checkOnlinePayment(long mobileNo,long cardNo,int pinNo)
-	{
+
+	/**
+	 * To check the validation and conditons are true
+	 * 
+	 * @param mobileNo
+	 * @param cardNo
+	 * @param pinNo
+	 * @return
+	 */
+
+	public static boolean checkOnlinePayment(long mobileNo, long cardNo, int pinNo) {
 		boolean valid = false;
-		OnlinePayment pay = new OnlinePayment(mobileNo,cardNo, pinNo, null);
+		OnlinePayment pay = new OnlinePayment(mobileNo, cardNo, pinNo, null);
 		boolean isRegister = ValidOnlinePayment.isValidOnlinePayment(mobileNo, cardNo, pinNo);
-		if(isRegister) {
+		if (isRegister) {
 			OnlineRegister.registerPayment(pay);
 			valid = true;
 		}
-		return isRegister;
+		return valid;
 	}
-		
-	}
+
+}

@@ -4,10 +4,19 @@ import in.sakthi.exception.ValidationException;
 import in.sakthi.validation.OnlinePaymentValidation;
 
 public class ValidOnlinePayment {
-	
+
 	private ValidOnlinePayment() {
-		
+
 	}
+
+	/**
+	 * The validation are true
+	 * 
+	 * @param mobileNo
+	 * @param cardNo
+	 * @param pinNo
+	 * @return
+	 */
 
 	public static boolean isValidOnlinePayment(long mobileNo, long cardNo, int pinNo) {
 		boolean isValid = false;
