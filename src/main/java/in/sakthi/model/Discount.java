@@ -2,20 +2,23 @@ package in.sakthi.model;
 
 import java.time.LocalDate;
 
-public class BuyChannel {
+public class Discount {
 	private String channelName;
-	private Integer channelId;
 	private String validity;
 	private Integer amount;
 	private LocalDate startDate;
 	private LocalDate expiryDate;
 
-	public BuyChannel(String channelName, Integer channelId, String validity)
- {
+	public Discount(String channelName, String validity) {
 		super();
 		this.channelName = channelName;
-		this.channelId = channelId;
 		this.validity = validity;
+	}
+
+	@Override
+	public String toString() {
+		return "Discount [channelName=" + channelName + ", validity=" + validity + ", amount=" + amount + ", startDate="
+				+ startDate + ", expiryDate=" + expiryDate + "]";
 	}
 
 	public String getChannelName() {
@@ -24,14 +27,6 @@ public class BuyChannel {
 
 	public void setChannelName(String channelName) {
 		this.channelName = channelName;
-	}
-
-	public Integer getChannelId() {
-		return channelId;
-	}
-
-	public void setChannelId(Integer channelId) {
-		this.channelId = channelId;
 	}
 
 	public String getValidity() {
@@ -64,11 +59,5 @@ public class BuyChannel {
 
 	public void setExpiryDate(LocalDate expiryDate) {
 		this.expiryDate = expiryDate;
-	}
-
-	@Override
-	public String toString() {
-		return "BuyChannel [channelName=" + channelName + ", channelId=" + channelId + ", validity=" + validity
-				+ ", amount=" + amount + ", startDate=" + startDate + ", expiryDate=" + expiryDate + "]";
 	}
 }
