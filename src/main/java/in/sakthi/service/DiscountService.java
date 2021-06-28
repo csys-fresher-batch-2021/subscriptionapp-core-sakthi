@@ -42,9 +42,12 @@ public class DiscountService {
 			String obj1 = "The Expiry Date is: " + expiryDate;
 			Logger.logger(obj1);
 		}
-		System.out.println("The Discount is " + percentage + "% for your Purchase...");
-		System.out.println("The Amount is : " + amount);
-		System.out.println("The Discount Amount is: " + discount);
+		String obj = ("The Discount is " + percentage + "% for your Purchase...");
+		Logger.logger(obj);
+		String obj1 = ("The Amount is : " + amount);
+		Logger.logger(obj1);
+		String obj2 = ("The Discount Amount is: " +discount);
+		Logger.logger(obj2);
 		return amount;
 	}
 }

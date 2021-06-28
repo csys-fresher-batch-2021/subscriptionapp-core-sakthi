@@ -6,7 +6,7 @@ public class Discount {
 	private String channelName;
 	private String validity;
 	private Integer amount;
-	private Integer discount;
+	private Integer discountPrice;
 	private Integer percentage;
 	private LocalDate startDate;
 	private LocalDate expiryDate;
@@ -49,11 +49,11 @@ public class Discount {
 	}
 	
 	public Integer getDiscount() {
-		return discount;
+		return discountPrice;
 	}
 
 	public void setDiscount(Integer discount) {
-		this.discount = discount;
+		this.discountPrice = discount;
 	}
 
 	public Integer getPercentage() {
