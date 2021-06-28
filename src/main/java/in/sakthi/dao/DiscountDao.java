@@ -9,8 +9,15 @@ import in.sakthi.util.ConnectionUtil;
 
 public class DiscountDao {
 	private DiscountDao() {
-		
+
 	}
+
+	/**
+	 * Store the datebase in channelName,validity,amount
+	 * 
+	 * @param list
+	 * @throws DatabaseException
+	 */
 	public static void channelDiscount(Discount list) throws DatabaseException {
 		Connection con = null;
 		PreparedStatement pst = null;
