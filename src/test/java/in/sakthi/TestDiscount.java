@@ -6,9 +6,10 @@ import in.sakthi.service.DiscountService;
 public class TestDiscount {
 	public static void main(String[] args) {
 		String channelName = "Hotstar";
-		String validity = "onthly";
-		Discount list = new Discount(channelName, validity);
+		String validity = "Monthly";
+		Integer amount = 200;
+		Discount list = new Discount(channelName, validity,amount);
 		DiscountService.discount(list);
-		DiscountService.date(validity);
+		DiscountService.date(amount,validity);
 	}
 }

@@ -20,33 +20,31 @@ public class DiscountService {
 		}
 		return true;
 	}
-	public static boolean date(String validity) {
-		boolean isValid = false;
-		if (validity.equals("Monthly")) {
-			Integer amount = 200;
-			String obj = "The amount is: " + amount;
-			Logger.logger(obj);
-			String obj1 = "Your Discount is 30days + Extra 3 days...";
-			Logger.logger(obj1);
+	public static int date(Integer amount,String validity) {
+		int discount = 0;
+		int percentage = 0;
+		if (amount <= 200 && validity.equals("Monthly")) {
+			percentage = 1;
+			discount = amount - amount * percentage / 100;
 			LocalDate startDate = LocalDate.now();
-			LocalDate expiryDate = startDate.plusDays(33);
-			String obj2 = "The Starting Date is: " + startDate;
-			Logger.logger(obj2);
-			String obj3 = "The Expiry Date is: " + expiryDate;
-			Logger.logger(obj3);
-		} else {
-			Integer amount = 700;
-			String obj = "The amount is: " + amount;
+			LocalDate expiryDate = startDate.plusDays(30);
+			String obj = "The Starting Date is: " + startDate;
 			Logger.logger(obj);
-			String obj1 = "Your Discount is 365days + Extra 10 days...";
+			String obj1 = "The Expiry Date is: " + expiryDate;
 			Logger.logger(obj1);
+		} else if(validity.equals("Yearly")) {
+			percentage = 2;
+			discount = amount - amount * percentage / 100;
 			LocalDate startDate = LocalDate.now();
-			LocalDate expiryDate = startDate.plusDays(375);
-			String obj2 = "The Starting Date is: " + startDate;
-			Logger.logger(obj2);
-			String obj3 = "The Expiry Date is: " + expiryDate;
-			Logger.logger(obj3);
+			LocalDate expiryDate = startDate.plusDays(365);
+			String obj = "The Starting Date is: " + startDate;
+			Logger.logger(obj);
+			String obj1 = "The Expiry Date is: " + expiryDate;
+			Logger.logger(obj1);
 		}
-		return isValid;
+		System.out.println("The Discount is " + percentage + "% for your Purchase...");
+		System.out.println("The Amount is : " + amount);
+		System.out.println("The Discount Amount is: " + discount);
+		return amount;
 	}
 }

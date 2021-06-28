@@ -16,10 +16,11 @@ public class DiscountDao {
 		PreparedStatement pst = null;
 		try {
 			Connection connection = ConnectionUtil.getConnection();
-			String sql = "insert into discountchannel(channel_name,validity) values(?,?)";
+			String sql = "insert into discountlist(channel_name,validity,amount) values(?,?,?)";
 			pst = connection.prepareStatement(sql);
 			pst.setString(1, list.getChannelName());
 			pst.setString(2, list.getValidity());
+			pst.setInt(3, list.getAmount());
 			pst.executeUpdate();
 		} catch (SQLException e) {
 			throw new DatabaseException("unable user detail");

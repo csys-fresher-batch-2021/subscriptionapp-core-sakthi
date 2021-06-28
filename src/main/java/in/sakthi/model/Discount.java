@@ -6,13 +6,16 @@ public class Discount {
 	private String channelName;
 	private String validity;
 	private Integer amount;
+	private Integer discount;
+	private Integer percentage;
 	private LocalDate startDate;
 	private LocalDate expiryDate;
 
-	public Discount(String channelName, String validity) {
+	public Discount(String channelName, String validity,Integer amount) {
 		super();
 		this.channelName = channelName;
 		this.validity = validity;
+		this.amount = amount;
 	}
 
 	@Override
@@ -36,8 +39,44 @@ public class Discount {
 	public void setValidity(String validity) {
 		this.validity = validity;
 	}
+
+	public Integer getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
 	
-	public static Discount getInstance() {
-		return null;
+	public Integer getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(Integer discount) {
+		this.discount = discount;
+	}
+
+	public Integer getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(Integer percentage) {
+		this.percentage = percentage;
+	}
+
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+	public LocalDate getExpiryDate() {
+		return expiryDate;
+	}
+
+	public void setExpiryDate(LocalDate expiryDate) {
+		this.expiryDate = expiryDate;
 	}
 }
