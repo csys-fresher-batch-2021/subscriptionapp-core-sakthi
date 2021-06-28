@@ -8,6 +8,9 @@ import in.sakthi.log.Logger;
 import in.sakthi.model.Discount;
 
 public class DiscountService {
+	private DiscountService() {
+		
+	}
 	public static boolean discount(Discount list) {
 		try {
 			DiscountDao.channelDiscount(list);
@@ -35,8 +38,8 @@ public class DiscountService {
 			Integer amount = 700;
 			String obj = "The amount is: " + amount;
 			Logger.logger(obj);
-			String Obj1 = "Your Discount is 365days + Extra 10 days...";
-			Logger.logger(Obj1);
+			String obj1 = "Your Discount is 365days + Extra 10 days...";
+			Logger.logger(obj1);
 			LocalDate startDate = LocalDate.now();
 			LocalDate expiryDate = startDate.plusDays(375);
 			String obj2 = "The Starting Date is: " + startDate;

@@ -8,6 +8,9 @@ import in.sakthi.model.Discount;
 import in.sakthi.util.ConnectionUtil;
 
 public class DiscountDao {
+	private DiscountDao() {
+		
+	}
 	public static void channelDiscount(Discount list) throws DatabaseException {
 		Connection con = null;
 		PreparedStatement pst = null;

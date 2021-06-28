@@ -10,8 +10,7 @@ public class BuyChannel {
 	private LocalDate startDate;
 	private LocalDate expiryDate;
 
-	public BuyChannel(String channelName, Integer channelId, String validity)
- {
+	public BuyChannel(String channelName, Integer channelId, String validity) {
 		super();
 		this.channelName = channelName;
 		this.channelId = channelId;
@@ -70,5 +69,9 @@ public class BuyChannel {
 	public String toString() {
 		return "BuyChannel [channelName=" + channelName + ", channelId=" + channelId + ", validity=" + validity
 				+ ", amount=" + amount + ", startDate=" + startDate + ", expiryDate=" + expiryDate + "]";
+	}
+
+	public static BuyChannel getInstance() {
+		return null;
 	}
 }

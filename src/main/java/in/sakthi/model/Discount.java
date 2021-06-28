@@ -60,4 +60,8 @@ public class Discount {
 	public void setExpiryDate(LocalDate expiryDate) {
 		this.expiryDate = expiryDate;
 	}
+
+	public static Discount getInstance() {
+		return null;
+	}
 }
