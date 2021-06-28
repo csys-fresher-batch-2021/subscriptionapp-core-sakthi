@@ -36,31 +36,7 @@ public class Discount {
 	public void setValidity(String validity) {
 		this.validity = validity;
 	}
-
-	public Integer getAmount() {
-		return amount;
-	}
-
-	public void setAmount(Integer amount) {
-		this.amount = amount;
-	}
-
-	public LocalDate getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(LocalDate startDate) {
-		this.startDate = startDate;
-	}
-
-	public LocalDate getExpiryDate() {
-		return expiryDate;
-	}
-
-	public void setExpiryDate(LocalDate expiryDate) {
-		this.expiryDate = expiryDate;
-	}
-
+	
 	public static Discount getInstance() {
 		return null;
 	}
