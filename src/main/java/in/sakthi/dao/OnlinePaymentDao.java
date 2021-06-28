@@ -8,7 +8,6 @@ import in.sakthi.model.OnlinePayment;
 import in.sakthi.util.ConnectionUtil;
 
 public class OnlinePaymentDao {
-
 	private OnlinePaymentDao() {
 
 	}
@@ -18,7 +17,6 @@ public class OnlinePaymentDao {
 	 * 
 	 * @param pay
 	 */
-
 	public static void payment(OnlinePayment pay) {
 		Connection con = null;
 		PreparedStatement pst = null;
@@ -36,7 +34,5 @@ public class OnlinePaymentDao {
 		} finally {
 			ConnectionUtil.close(pst, con);
 		}
-
 	}
-
 }

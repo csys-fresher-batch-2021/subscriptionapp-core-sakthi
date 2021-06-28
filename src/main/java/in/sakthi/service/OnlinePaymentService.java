@@ -1,25 +1,14 @@
 package in.sakthi.service;
 
 import in.sakthi.dao.OnlinePaymentDao;
-import in.sakthi.exception.ValidationException;
+import in.sakthi.exception.ServiceException;
 import in.sakthi.model.OnlinePayment;
 import in.sakthi.validation.OnlinePaymentValidation;
 
-public class ValidOnlinePayment {
-
-	private ValidOnlinePayment() {
+public class OnlinePaymentService {
+	private OnlinePaymentService() {
 
 	}
-
-	/**
-	 * The validation are true
-	 * 
-	 * @param mobileNo
-	 * @param cardNo
-	 * @param pinNo
-	 * @param pay
-	 * @return
-	 */
 
 	public static boolean isValidOnlinePayment(long mobileNo, long cardNo, int pinNo, OnlinePayment pay) {
 		boolean isValid = false;
@@ -28,10 +17,9 @@ public class ValidOnlinePayment {
 					&& OnlinePaymentValidation.isValidPinNo(pinNo)) {
 				isValid = true;
 				OnlinePaymentDao.payment(pay);
-
 			}
 		} catch (Exception e) {
-			throw new ValidationException("TheDetails are Invalid");
+			throw new ServiceException("The Details are Invalid");
 		}
 		return isValid;
 	}
