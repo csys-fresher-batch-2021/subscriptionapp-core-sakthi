@@ -52,4 +52,6 @@ public class OnlinePayment {
 	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
-}
+
+	}
+
