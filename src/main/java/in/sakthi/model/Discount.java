@@ -2,19 +2,26 @@ package in.sakthi.model;
 
 import java.time.LocalDate;
 
-public class BuyChannel {
+public class Discount {
 	private String channelName;
-	private Integer channelId;
 	private String validity;
 	private Integer amount;
+	private Integer discountPrice;
+	private Integer percentage;
 	private LocalDate startDate;
 	private LocalDate expiryDate;
 
-	public BuyChannel(String channelName, Integer channelId, String validity) {
+	public Discount(String channelName, String validity,Integer amount) {
 		super();
 		this.channelName = channelName;
-		this.channelId = channelId;
 		this.validity = validity;
+		this.amount = amount;
+	}
+
+	@Override
+	public String toString() {
+		return "Discount [channelName=" + channelName + ", validity=" + validity + ", amount=" + amount + ", startDate="
+				+ startDate + ", expiryDate=" + expiryDate + "]";
 	}
 
 	public String getChannelName() {
@@ -23,14 +30,6 @@ public class BuyChannel {
 
 	public void setChannelName(String channelName) {
 		this.channelName = channelName;
-	}
-
-	public Integer getChannelId() {
-		return channelId;
-	}
-
-	public void setChannelId(Integer channelId) {
-		this.channelId = channelId;
 	}
 
 	public String getValidity() {
@@ -48,6 +47,22 @@ public class BuyChannel {
 	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
+	
+	public Integer getDiscount() {
+		return discountPrice;
+	}
+
+	public void setDiscount(Integer discount) {
+		this.discountPrice = discount;
+	}
+
+	public Integer getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(Integer percentage) {
+		this.percentage = percentage;
+	}
 
 	public LocalDate getStartDate() {
 		return startDate;
@@ -63,15 +78,5 @@ public class BuyChannel {
 
 	public void setExpiryDate(LocalDate expiryDate) {
 		this.expiryDate = expiryDate;
-	}
-
-	@Override
-	public String toString() {
-		return "BuyChannel [channelName=" + channelName + ", channelId=" + channelId + ", validity=" + validity
-				+ ", amount=" + amount + ", startDate=" + startDate + ", expiryDate=" + expiryDate + "]";
-	}
-
-	public static BuyChannel getInstance() {
-		return null;
 	}
 }
