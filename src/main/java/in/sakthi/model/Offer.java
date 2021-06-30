@@ -1,15 +1,22 @@
 package in.sakthi.model;
 
 public class Offer {
+	private Integer channelId;
 	private String channelName;
 	private Integer price;
 	private String validity;
 	private String startDate;
 	private String expiryDate;
-
-	public Offer(String channelName, Integer price, String validity, String startDate,
+	
+	@Override
+	public String toString() {
+		return "Offer [channelId=" + channelId + ", channelName=" + channelName + ", price=" + price + ", validity="
+				+ validity + ", startDate=" + startDate + ", expiryDate=" + expiryDate + "]";
+	}
+	public Offer(Integer channelId,String channelName, Integer price, String validity, String startDate,
 			String expiryDate) {
-		super();
+		super(); 
+		this.channelId = channelId;
 		this.channelName = channelName;
 		this.price = price;
 		this.validity = validity;
@@ -17,12 +24,14 @@ public class Offer {
 		this.expiryDate = expiryDate;
 	}
 
-	@Override
-	public String toString() {
-		return "Offer [ channelName=" + channelName + ", price=" + price + ", validity="
-				+ validity + ", startDate=" + startDate + ", expiryDate=" + expiryDate + "]";
+	
+	public Integer getChannelId() {
+		return channelId;
 	}
 
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
+	}
 	public String getChannelName() {
 		return channelName;
 	}
