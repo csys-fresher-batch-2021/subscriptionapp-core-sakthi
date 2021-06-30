@@ -14,6 +14,13 @@ public class OfferDao {
 	private OfferDao() {
 
 	}
+
+	/**
+	 * Store the database in offer detail
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
 	public static List<Offer> getAllOffer() throws SQLException {
 		List<Offer> offerList = new ArrayList<>();
 		Connection con = null;
@@ -31,7 +38,7 @@ public class OfferDao {
 				Integer price = rst.getInt("price");
 				String startDate = rst.getString("start_date");
 				String expiryDate = rst.getString("expiry_date");
-				Offer listOffer = new Offer(channelId,channelName,price,validity,startDate,expiryDate);
+				Offer listOffer = new Offer(channelId, channelName, price, validity, startDate, expiryDate);
 				offerList.add(listOffer);
 			}
 		} catch (SQLException e) {
@@ -41,5 +48,4 @@ public class OfferDao {
 		}
 		return offerList;
 	}
-
 }

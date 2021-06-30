@@ -7,15 +7,16 @@ public class Offer {
 	private String validity;
 	private String startDate;
 	private String expiryDate;
-	
+
 	@Override
 	public String toString() {
 		return "Offer [channelId=" + channelId + ", channelName=" + channelName + ", price=" + price + ", validity="
 				+ validity + ", startDate=" + startDate + ", expiryDate=" + expiryDate + "]";
 	}
-	public Offer(Integer channelId,String channelName, Integer price, String validity, String startDate,
+
+	public Offer(Integer channelId, String channelName, Integer price, String validity, String startDate,
 			String expiryDate) {
-		super(); 
+		super();
 		this.channelId = channelId;
 		this.channelName = channelName;
 		this.price = price;
@@ -24,7 +25,6 @@ public class Offer {
 		this.expiryDate = expiryDate;
 	}
 
-	
 	public Integer getChannelId() {
 		return channelId;
 	}
@@ -32,6 +32,7 @@ public class Offer {
 	public void setChannelId(Integer channelId) {
 		this.channelId = channelId;
 	}
+
 	public String getChannelName() {
 		return channelName;
 	}

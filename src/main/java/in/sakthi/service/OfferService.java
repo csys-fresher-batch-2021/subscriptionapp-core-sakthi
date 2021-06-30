@@ -7,14 +7,21 @@ import in.sakthi.log.Logger;
 import in.sakthi.model.Offer;
 
 public class OfferService {
+	/**
+	 * list of the offer Details
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
 	public static List<Offer> getOffer() throws SQLException {
 		return OfferDao.getAllOffer();
 	}
+
 	public static void main(String[] args) throws SQLException {
 		List<Offer> offerList = OfferService.getOffer();
 		for (Offer listOffer : offerList) {
-			String obj = "Offer is: "+listOffer;
+			String obj = "Offer is: " + listOffer;
 			Logger.logger(obj);
+		}
 	}
-}
 }
