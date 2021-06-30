@@ -14,7 +14,6 @@ public class OfferDao {
 	private OfferDao() {
 
 	}
-
 	public static List<Offer> getAllOffer() throws SQLException {
 		List<Offer> offerList = new ArrayList<>();
 		Connection con = null;
