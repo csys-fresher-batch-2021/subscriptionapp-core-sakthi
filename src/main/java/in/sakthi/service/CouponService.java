@@ -24,7 +24,7 @@ public class CouponService {
 	 * @throws SQLException
 	 */
 	public static boolean checkCoupon(String name, int age, Long mobileNo, String couponName, String prize,
-			Integer couponId) throws ServiceException {
+			Integer couponId) {
 		boolean valid = false;
 		Coupon coupon = new Coupon(name, age, mobileNo, couponId, couponName, prize);
 		boolean isRegister = CouponService.isValidCoupon(name, age, mobileNo, couponName, prize);
@@ -32,7 +32,7 @@ public class CouponService {
 			CouponService.registerCoupon(coupon);
 			valid = true;
 		}
-		return isRegister;
+		return valid;
 	}
 
 	public static boolean isValidCoupon(String name, Integer age, long mobileNo, String couponName, String prize) {
