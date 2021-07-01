@@ -4,6 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CouponValidation {
+	private CouponValidation() {
+
+	}
 
 	/**
 	 * Validate the name,age,mobileno,couponname,prize
@@ -21,7 +24,7 @@ public class CouponValidation {
 
 	public static boolean isValidName(String name) {
 		boolean isValid = false;
-		String regex = "^[a-zA-Z]{3,12}";
+		String regex = "^[a-zA-Z]{3,15}";
 		if (CouponValidation.isEmptyString(name)) {
 			Pattern pattern = Pattern.compile(regex);
 			Matcher match = pattern.matcher(name);
