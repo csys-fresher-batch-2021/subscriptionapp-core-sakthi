@@ -10,17 +10,16 @@ import in.sakthi.model.Offer;
 public class OfferService {
 	/**
 	 * list of the offer Details
+	 * @return 
 	 * 
-	 * @return
 	 * @throws SQLException
 	 */
-	public static List<Offer> getOffer() throws ServiceException {
+	public static List<Offer> getOffer()   {
 		try {
 			return OfferDao.getAllOffer();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new ServiceException("Unable OfferList");
 		}
-		return null;
 	}
 
 	public static void main(String[] args) throws ServiceException {
