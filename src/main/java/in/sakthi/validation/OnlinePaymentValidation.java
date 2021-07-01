@@ -18,10 +18,8 @@ public class OnlinePaymentValidation {
 
 	public static boolean isEmptyString(String name) {
 		boolean isValid = false;
-
 		if (!(name.trim().equals(""))) {
 			isValid = true;
-
 		}
 		return isValid;
 	}
