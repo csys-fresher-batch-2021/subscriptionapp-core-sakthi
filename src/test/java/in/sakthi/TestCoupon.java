@@ -12,8 +12,7 @@ public class TestCoupon {
 		Integer couponId = 102;
 		String couponName = "Christmas";
 		Coupon coupon = new Coupon(name, age, mobileNo, couponId, couponName);
-		if (CouponService.isValidCoupon(name, age, mobileNo, couponName)) {
-			CouponService.registerCoupon(coupon);
+		if (CouponService.isValidCoupon(name, age, mobileNo, couponName, coupon)) {
 			System.out.println("Your Detail is Registered Successfully...");
 		} else {
 			System.out.println("Your Detail is not Registered...");

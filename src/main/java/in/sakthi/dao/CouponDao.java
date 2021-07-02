@@ -18,7 +18,7 @@ public class CouponDao {
 	 * @param coupon
 	 * @throws SQLException
 	 */
-	public static void couponRegister(Coupon coupon) throws SQLException {
+	public static boolean couponRegister(Coupon coupon) throws SQLException {
 		Connection con = null;
 		PreparedStatement pst = null;
 		try {
@@ -36,5 +36,6 @@ public class CouponDao {
 		} finally {
 			ConnectionUtil.close(pst, con);
 		}
+		return false;
 	}
 }

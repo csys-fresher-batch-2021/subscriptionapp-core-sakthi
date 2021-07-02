@@ -23,38 +23,17 @@ public class CouponService {
 	 * @return
 	 * @throws SQLException
 	 */
-	public static boolean checkCoupon(String name, int age, Long mobileNo, String couponName,
-			Integer couponId) {
-		boolean valid = false;
-		Coupon coupon = new Coupon(name, age, mobileNo, couponId, couponName);
-		boolean isRegister = CouponService.isValidCoupon(name, age, mobileNo, couponName);
-		if (isRegister) {
-			CouponService.registerCoupon(coupon);
-			valid = true;
-		}
-		return valid;
-	}
-
-	public static boolean isValidCoupon(String name, Integer age, long mobileNo, String couponName) {
+	public static boolean isValidCoupon(String name, Integer age, long mobileNo, String couponName, Coupon coupon) {
 		boolean isValid = false;
 		try {
 			if (CouponValidation.isValidName(name) && CouponValidation.isValidAge(age)
 					&& CouponValidation.isValidMobileno(mobileNo) && CouponValidation.isValidcouponName(couponName)) {
 				isValid = true;
+				CouponDao.couponRegister(coupon);
 			}
 		} catch (Exception e) {
 			throw new ServiceException("The Invalid Validation");
 		}
 		return isValid;
 	}
-
-	public static boolean registerCoupon(Coupon couponobj) {
-		try {
-			CouponDao.couponRegister(couponobj);
-		} catch (SQLException e) {
-			throw new ServiceException("Cannot register Coupon");
-		}
-		return true;
-	}
-
 }
