@@ -7,22 +7,20 @@ public class Coupon {
 	private Long mobileNo;
 	private Integer couponId;
 	private String couponName;
-	private String prize;
 	
-	public Coupon(String name, Integer age, Long mobileNo, Integer couponId, String couponName, String prize) {
+	public Coupon(String name, Integer age, Long mobileNo, Integer couponId, String couponName) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.mobileNo = mobileNo;
 		this.couponId = couponId;
 		this.couponName = couponName;
-		this.prize = prize;
 	}
 	
 	@Override
 	public String toString() {
 		return "Coupon [name=" + name + ", age=" + age + ", mobileNo=" + mobileNo + ", couponId=" + couponId
-				+ ", couponName=" + couponName + ", prize=" + prize + "]";
+				+ ", couponName=" + couponName + "]";
 	}
 	
 	public String getName() {
@@ -54,11 +52,5 @@ public class Coupon {
 	}
 	public void setCouponName(String couponName) {
 		this.couponName = couponName;
-	}
-	public String getPrize() {
-		return prize;
-	}
-	public void setPrize(String prize) {
-		this.prize = prize;
 	}
 }

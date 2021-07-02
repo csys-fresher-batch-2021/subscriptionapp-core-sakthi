@@ -23,14 +23,13 @@ public class CouponDao {
 		PreparedStatement pst = null;
 		try {
 			Connection connection = ConnectionUtil.getConnection();
-			String sql = "insert into couponlist(name,age,mobile_no,coupon_id,coupon_name,prize) values (?,?,?,?,?,?)";
+			String sql = "insert into couponlist(name,age,mobile_no,coupon_id,coupon_name) values (?,?,?,?,?)";
 			pst = connection.prepareStatement(sql);
 			pst.setString(1, coupon.getName());
 			pst.setInt(2, coupon.getAge());
 			pst.setLong(3, coupon.getMobileNo());
 			pst.setInt(4, coupon.getCouponId());
 			pst.setString(5, coupon.getCouponName());
-			pst.setString(6, coupon.getPrize());
 			pst.executeUpdate();
 		} catch (SQLException e) {
 			throw new DatabaseException("unable to coupon details");

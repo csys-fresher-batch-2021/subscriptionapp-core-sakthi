@@ -23,11 +23,11 @@ public class CouponService {
 	 * @return
 	 * @throws SQLException
 	 */
-	public static boolean checkCoupon(String name, int age, Long mobileNo, String couponName, String prize,
+	public static boolean checkCoupon(String name, int age, Long mobileNo, String couponName,
 			Integer couponId) {
 		boolean valid = false;
-		Coupon coupon = new Coupon(name, age, mobileNo, couponId, couponName, prize);
-		boolean isRegister = CouponService.isValidCoupon(name, age, mobileNo, couponName, prize);
+		Coupon coupon = new Coupon(name, age, mobileNo, couponId, couponName);
+		boolean isRegister = CouponService.isValidCoupon(name, age, mobileNo, couponName);
 		if (isRegister) {
 			CouponService.registerCoupon(coupon);
 			valid = true;
@@ -35,12 +35,11 @@ public class CouponService {
 		return valid;
 	}
 
-	public static boolean isValidCoupon(String name, Integer age, long mobileNo, String couponName, String prize) {
+	public static boolean isValidCoupon(String name, Integer age, long mobileNo, String couponName) {
 		boolean isValid = false;
 		try {
 			if (CouponValidation.isValidName(name) && CouponValidation.isValidAge(age)
-					&& CouponValidation.isValidMobileno(mobileNo) && CouponValidation.isValidcouponName(couponName)
-					&& CouponValidation.isValidPrize(prize)) {
+					&& CouponValidation.isValidMobileno(mobileNo) && CouponValidation.isValidcouponName(couponName)) {
 				isValid = true;
 			}
 		} catch (Exception e) {
